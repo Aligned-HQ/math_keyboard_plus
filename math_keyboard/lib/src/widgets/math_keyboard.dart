@@ -491,18 +491,21 @@ class _NavigationButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: flex ?? 2,
-      child: KeyboardButton(
-        onTap: onTap,
-        onHold: onTap,
-        color: Colors.grey[900],
-        child: Icon(
-          icon,
-          color: Colors.white,
-          size: iconSize,
-        ),
-      ),
-    );
+        flex: flex ?? 2,
+        child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: onTap,
+              onLongPress: onTap,
+              child: KeyboardButton(
+                color: Colors.grey[900],
+                child: Icon(
+                  icon,
+                  color: Colors.white,
+                  size: iconSize,
+                ),
+              ),
+            )));
   }
 }
 

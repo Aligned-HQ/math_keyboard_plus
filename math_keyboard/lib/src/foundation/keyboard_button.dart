@@ -264,9 +264,23 @@ final standardKeyboard = [
   ],
   [
     const PageButtonConfig(),
-    _digitButtons[0],
+    const BasicKeyboardButtonConfig(
+      label: '(',
+      value: '(',
+      highlighted: true,
+      keyboardCharacters: ['('],
+    ),
+    const BasicKeyboardButtonConfig(
+      label: ')',
+      value: ')',
+      highlighted: true,
+      keyboardCharacters: [')'],
+    ),
     PreviousButtonConfig(),
     NextButtonConfig(),
+  ],
+  [
+    _digitButtons[0],
     SubmitButtonConfig(),
   ],
 ];
@@ -292,9 +306,23 @@ final numberKeyboard = [
     DeleteButtonConfig(),
   ],
   [
-    PreviousButtonConfig(),
+    const BasicKeyboardButtonConfig(
+      label: '(',
+      value: '(',
+      highlighted: true,
+      keyboardCharacters: ['('],
+    ),
     _digitButtons[0],
+    const BasicKeyboardButtonConfig(
+      label: ')',
+      value: ')',
+      highlighted: true,
+      keyboardCharacters: [')'],
+    ),
+    PreviousButtonConfig(),
     NextButtonConfig(),
+  ],
+  [
     SubmitButtonConfig(),
   ],
 ];
