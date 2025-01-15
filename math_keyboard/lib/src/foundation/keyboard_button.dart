@@ -36,9 +36,9 @@ class BasicKeyboardButtonConfig extends KeyboardButtonConfig {
     List<String> keyboardCharacters = const [],
     int? flex,
   }) : super(
-          flex: flex,
-          keyboardCharacters: keyboardCharacters,
-        );
+    flex: flex,
+    keyboardCharacters: keyboardCharacters,
+  );
 
   /// The label of the button.
   final String label;
@@ -177,14 +177,28 @@ final functionKeyboard = [
       value: r'\cos^{-1}(',
       asTex: true,
     ),
+
   ],
   [
+    const BasicKeyboardButtonConfig(
+      label: r'\int_{\Box}^{\Box}',
+      value: r'\int_',
+      args: [TeXArg.braces, TeXArg.braces],
+      asTex: true,
+    ),
+    const BasicKeyboardButtonConfig(
+      label: r'\sum_{\Box}^{\Box}',
+      value: r'\sum_',
+      args: [TeXArg.braces, TeXArg.braces],
+      asTex: true,
+    ),
     const BasicKeyboardButtonConfig(
       label: r'\log_{\Box}(\Box)',
       value: r'\log_',
       asTex: true,
       args: [TeXArg.braces, TeXArg.parentheses],
     ),
+
     const BasicKeyboardButtonConfig(
       label: r'\ln(\Box)',
       value: r'\ln(',
