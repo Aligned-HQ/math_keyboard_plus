@@ -215,7 +215,19 @@ final functionKeyboard = [
     ),
   ],
   [
-    const PageButtonConfig(flex: 2),
+    const PageButtonConfig(),
+    const BasicKeyboardButtonConfig(
+      label: '(',
+      value: '(',
+      highlighted: true,
+      keyboardCharacters: ['('],
+    ),
+    const BasicKeyboardButtonConfig(
+      label: ')',
+      value: ')',
+      highlighted: true,
+      keyboardCharacters: [')'],
+    ),
     PreviousButtonConfig(),
     NextButtonConfig(),
     DeleteButtonConfig(),

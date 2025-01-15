@@ -93,7 +93,7 @@ class MathKeyboard extends StatelessWidget {
             child: Material(
               type: MaterialType.transparency,
               child: ColoredBox(
-                color: Colors.black,
+                color: Colors.grey[50]!,
                 child: SafeArea(
                   top: false,
                   child: _KeyboardBody(
@@ -248,7 +248,7 @@ class _Variables extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 54,
-      color: Colors.grey[900],
+      color: Colors.grey[200],
       child: AnimatedBuilder(
         animation: controller,
         builder: (context, child) {
@@ -260,7 +260,7 @@ class _Variables extends StatelessWidget {
                 child: Container(
                   height: 24,
                   width: 1,
-                  color: Colors.white,
+                  color: Colors.grey[400],
                 ),
               );
             },
@@ -421,14 +421,14 @@ class _BasicButton extends StatelessWidget {
     if (label == null) {
       result = Icon(
         icon,
-        color: Colors.white,
+        color: Colors.black87,
       );
     } else if (asTex) {
       result = Math.tex(
         label!,
         options: MathOptions(
           fontSize: 22,
-          color: Colors.white,
+          color: Colors.black87,
         ),
       );
     } else {
@@ -443,7 +443,7 @@ class _BasicButton extends StatelessWidget {
         symbol!,
         style: const TextStyle(
           fontSize: 22,
-          color: Colors.white,
+          color: Colors.black87,
         ),
       );
     }
@@ -453,7 +453,7 @@ class _BasicButton extends StatelessWidget {
       color: highlightLevel > 1
           ? Theme.of(context).colorScheme.secondary
           : highlightLevel == 1
-              ? Colors.grey[900]
+              ? Colors.grey[300]
               : null,
       child: result,
     );
@@ -498,10 +498,10 @@ class _NavigationButton extends StatelessWidget {
               onTap: onTap,
               onLongPress: onTap,
               child: KeyboardButton(
-                color: Colors.grey[900],
+                color: Colors.grey[300],
                 child: Icon(
                   icon,
-                  color: Colors.white,
+                  color: Colors.black87,
                   size: iconSize,
                 ),
               ),
@@ -532,7 +532,7 @@ class _VariableButton extends StatelessWidget {
         name,
         options: MathOptions(
           fontSize: 22,
-          color: Colors.white,
+          color: Colors.black87,
         ),
       ),
     );
