@@ -181,18 +181,6 @@ final functionKeyboard = [
   ],
   [
     const BasicKeyboardButtonConfig(
-      label: r'\int_{\Box}^{\Box}',
-      value: r'\int_',
-      args: [TeXArg.braces, TeXArg.braces],
-      asTex: true,
-    ),
-    const BasicKeyboardButtonConfig(
-      label: r'\sum_{\Box}^{\Box}',
-      value: r'\sum_',
-      args: [TeXArg.braces, TeXArg.braces],
-      asTex: true,
-    ),
-    const BasicKeyboardButtonConfig(
       label: r'\log_{\Box}(\Box)',
       value: r'\log_',
       asTex: true,
@@ -217,6 +205,20 @@ final functionKeyboard = [
       asTex: true,
     ),
   ],
+  [
+    const BasicKeyboardButtonConfig(
+      label: r'\int_{\Box}^{\Box}',
+      value: r'\int_',
+      args: [TeXArg.braces, TeXArg.braces],
+      asTex: true,
+    ),
+    const BasicKeyboardButtonConfig(
+      label: r'\sum_{\Box}^{\Box}',
+      value: r'\sum_',
+      args: [TeXArg.braces, TeXArg.braces],
+      asTex: true,
+    ),
+  ]
   [
     const PageButtonConfig(flex: 3),
     const BasicKeyboardButtonConfig(
