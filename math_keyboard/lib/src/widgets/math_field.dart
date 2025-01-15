@@ -374,7 +374,7 @@ class _MathFieldState extends State<MathField> with TickerProviderStateMixin {
         ...standardKeyboard,
         ...functionKeyboard,
       ] else if (widget.keyboardType == MathKeyboardType.numberOnly) ...[
-        ...numberKeyboard,
+        ...standardKeyboard,
       ],
     ].fold<List<KeyboardButtonConfig>>([], (previousValue, element) {
       return previousValue..addAll(element);

@@ -121,7 +121,7 @@ class MathKeyboard extends StatelessWidget {
                                 child: _Buttons(
                                   controller: controller,
                                   page1: type == MathKeyboardType.numberOnly
-                                      ? numberKeyboard
+                                      ? null
                                       : standardKeyboard,
                                   page2: type == MathKeyboardType.numberOnly
                                       ? null
@@ -314,7 +314,7 @@ class _Buttons extends StatelessWidget {
         animation: controller,
         builder: (context, child) {
           final layout =
-              controller.secondPage ? page2! : page1 ?? numberKeyboard;
+              controller.secondPage ? page2! : page1 ?? standardKeyboard;
           return Column(
             children: [
               for (final row in layout)
