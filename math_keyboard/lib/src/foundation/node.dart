@@ -144,13 +144,16 @@ class TeXFunction extends TeX {
   /// The arguments to this function.
   final List<TeXNode> argNodes;
 
-  /// Returns the opening character for a function argument.
   String openingChar(TeXArg type) {
     switch (type) {
       case TeXArg.braces:
         return '{';
       case TeXArg.brackets:
         return '[';
+      case TeXArg.subscript:
+        return '_{';
+      case TeXArg.superscript:
+        return '^{';
       default:
         return '(';
     }
@@ -163,6 +166,9 @@ class TeXFunction extends TeX {
         return '}';
       case TeXArg.brackets:
         return ']';
+      case TeXArg.subscript:
+      case TeXArg.superscript:
+        return '}';
       default:
         return ')';
     }
@@ -260,4 +266,7 @@ enum TeXArg {
   /// for functions like sin, cos, tan, etc. as well, so the user doesn't have
   /// to close the parentheses manually.
   parentheses,
+
+  subscript,
+  superscript,
 }

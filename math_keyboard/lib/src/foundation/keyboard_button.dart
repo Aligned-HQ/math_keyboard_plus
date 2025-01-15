@@ -113,6 +113,7 @@ const _subtractButton = BasicKeyboardButtonConfig(
 );
 
 /// Keyboard showing extended functionality.
+/// Keyboard showing extended functionality.
 final functionKeyboard = [
   [
     const BasicKeyboardButtonConfig(
@@ -134,6 +135,9 @@ final functionKeyboard = [
       asTex: true,
       keyboardCharacters: [
         '^',
+        // This is a workaround for keyboard layout that use ^ as a toggle key.
+        // In that case, "Dead" is reported as the character (e.g. for German
+        // keyboards).
         'Dead',
       ],
     ),
@@ -202,32 +206,20 @@ final functionKeyboard = [
   ],
   [
     const BasicKeyboardButtonConfig(
-      label: r'\int_{\Box}^{\Box}',
-      value: r'\int_{}^',
-      args: [TeXArg.braces, TeXArg.braces],
+      label: r'\int_{\Box}^{\Box}\Box',
+      value: r'\int',
+      args: [TeXArg.subscript, TeXArg.superscript, TeXArg.braces],
       asTex: true,
     ),
     const BasicKeyboardButtonConfig(
-      label: r'\sum_{\Box}^{\Box}',
-      value: r'\sum_{}^',
-      args: [TeXArg.braces, TeXArg.braces],
+      label: r'\sum_{\Box}^{\Box}\Box',
+      value: r'\sum',
+      args: [TeXArg.subscript, TeXArg.superscript, TeXArg.braces],
       asTex: true,
     ),
   ],
   [
-    const PageButtonConfig(),
-    const BasicKeyboardButtonConfig(
-      label: '(',
-      value: '(',
-      highlighted: true,
-      keyboardCharacters: ['('],
-    ),
-    const BasicKeyboardButtonConfig(
-      label: ')',
-      value: ')',
-      highlighted: true,
-      keyboardCharacters: [')'],
-    ),
+    const PageButtonConfig(flex: 2),
     PreviousButtonConfig(),
     NextButtonConfig(),
     DeleteButtonConfig(),
