@@ -604,8 +604,7 @@ class _FieldPreview extends StatelessWidget {
         .buildTeXString(
           cursorColor: Color.lerp(
             _getDisabledCursorColor(Theme.of(context)),
-            Theme.of(context).textSelectionTheme.cursorColor ??
-                Theme.of(context).colorScheme.secondary,
+            const Color(0xFF25286a),
             cursorOpacity,
           ),
         )
