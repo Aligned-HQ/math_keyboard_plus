@@ -203,13 +203,13 @@ final functionKeyboard = [
   [
     const BasicKeyboardButtonConfig(
       label: r'\int_{\Box}^{\Box}',
-      value: r'\int_',
+      value: r'\int_{}^',
       args: [TeXArg.braces, TeXArg.braces],
       asTex: true,
     ),
     const BasicKeyboardButtonConfig(
       label: r'\sum_{\Box}^{\Box}',
-      value: r'\sum_',
+      value: r'\sum_{}^',
       args: [TeXArg.braces, TeXArg.braces],
       asTex: true,
     ),
@@ -292,6 +292,5 @@ final standardKeyboard = [
   ],
   [
     const PageButtonConfig(),
-    SubmitButtonConfig(),
   ],
 ];

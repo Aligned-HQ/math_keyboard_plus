@@ -21,12 +21,21 @@ class KeyboardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: color ?? Colors.grey[100],
-      child: InkWell(
-        onTap: onTap,
-        child: Center(
-          child: child,
+    return Container(
+      decoration: BoxDecoration(
+        color: color ?? Colors.grey[100],
+        border: Border.all(
+          color: Colors.grey[300]!,
+          width: 1,
+        ),
+      ),
+      child: Material(
+        type: MaterialType.transparency,
+        child: InkWell(
+          onTap: onTap,
+          child: Center(
+            child: child,
+          ),
         ),
       ),
     );

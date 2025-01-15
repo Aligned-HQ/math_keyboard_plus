@@ -281,6 +281,7 @@ class _Variables extends StatelessWidget {
 }
 
 /// Widget displaying the buttons.
+/// Widget displaying the buttons.
 class _Buttons extends StatelessWidget {
   /// Constructs a [_Buttons] Widget.
   const _Buttons({
@@ -308,8 +309,15 @@ class _Buttons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final standardRowHeight = 56.0;
+    final functionRowHeight = 72.0;
+    final layout = controller.secondPage ? page2! : page1 ?? standardKeyboard;
+    final totalHeight = controller.secondPage
+        ? functionRowHeight * layout.length // Height for function keyboard
+        : standardRowHeight * layout.length; // Height for standard keyboard
+
     return SizedBox(
-      height: 230 + 56, // Increased height to accommodate the new row
+      height: totalHeight,
       child: AnimatedBuilder(
         animation: controller,
         builder: (context, child) {
@@ -319,7 +327,9 @@ class _Buttons extends StatelessWidget {
             children: [
               for (final row in layout)
                 SizedBox(
-                  height: 56,
+                  height: controller.secondPage
+                      ? functionRowHeight
+                      : standardRowHeight,
                   child: Row(
                     children: [
                       for (final config in row)
